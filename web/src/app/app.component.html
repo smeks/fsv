@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+    <span
+        >Flight Sim Life
+        <i class="material-icons">airplanemode_active </i></span
+    >
+    <button mat-button routerLink="/home">Home</button>
+    <div *ngIf="loggedIn">
+        <button mat-button routerLink="/airports">Airports</button>
+        <button mat-button routerLink="/myflight">My Flight</button>
+    </div>
+    <span class="example-fill-remaining-space"></span>
+    <h3>{{ userName }} {{ playerMoney | currency }}</h3>
+    <div *ngIf="loggedIn">
+        <mat-menu #appMenu="matMenu">
+            <button mat-menu-item>Settings</button>
+            <button mat-menu-item>Help</button>
+            <button mat-menu-item (click)="logout()">Logout</button>
+        </mat-menu>
+        <button mat-icon-button [matMenuTriggerFor]="appMenu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+    </div>
+</mat-toolbar>
+<div class="mat-app-background basic-container">
+    <router-outlet></router-outlet>
+</div>

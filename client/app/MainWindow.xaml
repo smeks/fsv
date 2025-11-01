@@ -1,0 +1,69 @@
+﻿<Window x:Class="Economy.App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        mc:Ignorable="d"
+        Title="FlightSim Ventures" Height="482.8" Width="684">
+    <Window.Resources>
+    </Window.Resources>
+    <Grid>
+        <GroupBox Name="LoginGroupBox" Header="Login" Visibility="Visible" HorizontalAlignment="Left" Height="150" VerticalAlignment="Top" Width="300" Margin="10,0,0,0">
+            <StackPanel Margin="10,10,10,10">
+                <StackPanel Orientation="Horizontal" Margin="5,5,5,5">
+                    <fa:ImageAwesome Margin="2,2,5,2" Icon="User" Width="20" Height="20" Foreground="Black" />
+                    <TextBox Name="UsernameTextValue" VerticalAlignment="Center" Width="200">Username</TextBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="5,5,5,5">
+                    <fa:ImageAwesome Margin="2,2,5,2" Icon="Key" Width="20" Height="20" Foreground="Black" />
+                    <TextBox Name="PasswordTextValue" VerticalAlignment="Center" Width="200">Password</TextBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5,5,5,5">
+                    <Button Name="LoginButton" Click="LoginButton_OnClick" VerticalAlignment="Center" Width="100">Login</Button>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Name="FlightStatusGroupBox" Visibility="Hidden" Header="Flight Status" HorizontalAlignment="Left" Height="109" VerticalAlignment="Top" Width="515" Margin="10,0,0,0">
+            <StackPanel Margin="10,10,10,10">
+                <StackPanel Orientation="Horizontal" Margin="5,5,5,5">
+                    <fa:ImageAwesome Name="CurrentAircraftIconValue" Margin="2,2,5,2" Icon="ExclamationCircle" Width="20" Height="20" Foreground="Red" />
+                    <TextBlock Name="CurrentAircraftValue" VerticalAlignment="Center">No aircraft selected</TextBlock>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="5,5,5,5">
+                    <fa:ImageAwesome Name="CurrentLocationIconValue" Margin="2,2,5,2" Icon="ExclamationCircle" Width="20" Height="20" Foreground="Red" />
+                    <TextBlock Name="CurrentLocationValue" VerticalAlignment="Center">No location selected</TextBlock>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Name="MyHangerGroupBox" Visibility="Hidden" Header="My Hanger" HorizontalAlignment="Left" Height="140" VerticalAlignment="Top" Width="515" Margin="10,120,0,0">
+            <StackPanel Margin="10,10,10,10">
+                <StackPanel Orientation="Horizontal" Margin="5,5,5,5">
+                    <fa:ImageAwesome Name="RentedAircraftIconValue" Margin="2,2,5,2" Icon="ExclamationCircle" Width="20" Height="20" Foreground="Red" />
+                    <TextBlock Name="RentedAircraftTextValue" VerticalAlignment="Center">No aircraft rented</TextBlock>
+                </StackPanel>
+                <Button Name="StartFlightButton" Margin="5 5 5 5" Click="StartFlightButton_OnClick">Start Flight</Button>
+                <Button Name="EndFlightButton" Margin="5 5 5 5" Click="EndFlightButton_OnClick">End Flight</Button>
+            </StackPanel>
+        </GroupBox>
+        <StatusBar Name="sbar" 
+                   VerticalAlignment="Bottom" >
+            <StatusBarItem>
+                <StackPanel Orientation="Horizontal">
+                    <fa:ImageAwesome Name="StatusIconValue" Margin="2,2,5,2" Icon="Plane" Width="20" Height="20" Foreground="Red" />
+                    <TextBlock Name="StatusTextValue" VerticalAlignment="Center">Connected</TextBlock>
+                </StackPanel>
+            </StatusBarItem>
+            <Separator/>
+            <StatusBarItem>
+                <StackPanel Orientation="Horizontal">
+                    <fa:ImageAwesome Name="EconomyStatusIconValue" Margin="2,2,5,2" Icon="Globe" Width="20" Height="20" Foreground="Red" />
+                    <TextBlock Name="EconomyStatusTextValue" VerticalAlignment="Center">Flight Sim Economy</TextBlock>
+                </StackPanel>
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</Window>
